@@ -1,0 +1,21 @@
+---
+title: "RMarkdown Practice"
+author: "Bryshal Moore"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+#install.packages("tidyverse")
+library("tidyverse")
+```
+
+```{r}
+ggplot(mtcars, aes(x = factor(cyl))) +
+    geom_bar()
+```
