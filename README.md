@@ -22,4 +22,4 @@ If you have any questions or concerns, feel free to reach out:
 - **My Email** brymoore@ucdavis.edu
 - **Office Hours:** Monday 4 - 5pm; Thursday 10 - 11am *(may be subject to change)* 🤷‍♀️
   
-Happy coding! :💻
+Happy coding! 💻
