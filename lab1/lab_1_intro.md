@@ -1,15 +1,12 @@
 ---
 title: "Lab 1 Intro"
-date: "`r Sys.Date()`"
+date: "2024-01-17"
 output: 
   ioslides_presentation: 
     keep_md: true
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-library("jpeg")
-```
+
 
 ## Welcome!
 1. Please find a seat. It may be a bit crowded today!  

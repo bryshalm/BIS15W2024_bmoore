@@ -12,7 +12,7 @@
 
 <meta name="date" content="2024-01-17" />
 
-<title>Vectors and Data Matrices</title>
+<title>Getting Started</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1502,231 +1502,187 @@ border-radius: 0px;
 
 
 
-<h1 class="title toc-ignore">Vectors and Data Matrices</h1>
+<h1 class="title toc-ignore">Getting Started</h1>
 <h4 class="date">2024-01-17</h4>
 
 </div>
 
 
-<div id="learning-goals" class="section level2">
-<h2>Learning Goals</h2>
-<p><em>At the end of this exercise, you will be able to:</em><br />
-1. Define data structures and provide examples of vectors and data
-matrices.<br />
-2. Build a new vector and call elements within it.<br />
-3. Combine a series of vectors into a data matrix.<br />
-4. Name columns and rows in a data matrix.<br />
-5. Select values and use summary functions in a data matrix.</p>
+<div id="background" class="section level2">
+<h2>Background</h2>
+<p>In nearly every field of science, our ability to generate data has
+exceeded our capacity for analysis. For me, this means that there is the
+potential for loss to science; many important discoveries may go
+unnoticed because we are unable to efficiently analyze data.</p>
+<p>The goal for this course is to help get you started learning to
+manage, transform, and visualize data using the R programming language.
+You will learn to clearly and neatly organize messy data, transform it
+in ways that address your questions, and communicate results in a
+variety of formats. The course is designed for people with <strong>no
+prior programming experience</strong>. There is a substantial learning
+curve but, working together, we will make learning R easier,
+interesting, and fun.</p>
+<p>This class is NOT focused on statistical analysis or interpretation.
+The goal is to provide you with the tools you need to perform these
+tasks.</p>
 </div>
-<div id="data-structures" class="section level2">
-<h2>Data Structures</h2>
-<p>In addition to classes of data, R also organizes data in different
-ways. These are called data structures and include vectors, lists,
-matrices, data frames, and factors. For now, we will focus on
-<code>vectors</code>.</p>
+<div id="first-steps" class="section level2">
+<h2>First steps</h2>
+<p>It is important that you understand the first two weeks of the class
+can seem slow, tedious, and frustrating. These first steps are like
+learning a new language; you often won’t know what is being said or why.
+Please be patient and stick with me! I promise that it will get
+easier.</p>
 </div>
-<div id="vectors" class="section level2">
-<h2>Vectors</h2>
-<p>Vectors are a common way of organizing data in R. We create vectors
-using the <code>c</code> command. The <code>c</code> stands for
-concatenate.</p>
-<p>A numeric vector.</p>
-<pre class="r"><code>my_vector &lt;- c(10, 20, 30)</code></pre>
-<p>A character vector. Characters always have quotes and may be referred
-to as “strings”.</p>
-<pre class="r"><code>days_of_the_week &lt;- c(&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thrusday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;)</code></pre>
-<p>A convenient trick for creating a vector is to generate a sequence of
-numbers.</p>
-<pre class="r"><code>my_vector_sequence &lt;- c(1:100)
-my_vector_sequence</code></pre>
-<pre><code>##   [1]   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
-##  [19]  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36
-##  [37]  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54
-##  [55]  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71  72
-##  [73]  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90
-##  [91]  91  92  93  94  95  96  97  98  99 100</code></pre>
+<div id="resources" class="section level2">
+<h2>Resources</h2>
+<p>Given that R is open source, many resources are available online. We
+will use a combination of resources in the class, but key items are
+listed below.</p>
+<ul>
+<li><a href="https://jmledford3115.github.io/datascibiol/">Class
+Website</a><br />
+</li>
+<li><a href="https://www.youtube.com/channel/UCFX-MipGKF9jCEXaP-59BzQ">Class
+YouTube</a><br />
+</li>
+<li><a href="https://r4ds.had.co.nz/">R for data science</a></li>
+<li><a href="https://posit.co/resources/cheatsheets/">R
+cheatsheets</a></li>
+</ul>
 </div>
-<div id="identifying-vector-elements" class="section level2">
-<h2>Identifying vector elements</h2>
-<p>We can use <code>[]</code> to pull out elements in a vector. We just
-need to specify their position in the vector; i.e. day 3 is
-Wednesday.</p>
-<pre class="r"><code>days_of_the_week[3]</code></pre>
-<pre><code>## [1] &quot;Wednesday&quot;</code></pre>
+<div id="uc-davis" class="section level2">
+<h2>UC Davis</h2>
+<p>Our campus has a wealth of expertise in data science. Should your
+interests progress, here are some links. They offer regular workshops
+and maintain archives. Among the goals of this class is to get you
+set-up so that you can attend these workshops and learn more!</p>
+<ul>
+<li><a href="http://d-rug.github.io/">Davis R Users Group</a><br />
+</li>
+<li><a href="http://dsi.ucdavis.edu/">Data Science Initiative</a></li>
+</ul>
+</div>
+<div id="help" class="section level2">
+<h2>Help!</h2>
+<p>When you need help with homework or a class topic, please post on our
+<a href="https://discord.gg/5Z8Scwhj">class discord page</a>. We are
+here to support you and everyone should participate, please.</p>
+</div>
+<div id="lab-1-goals" class="section level2">
+<h2>Lab 1 Goals</h2>
+<p>The goal of lab 1 is to get everyone started using R, RStudio, and
+GitHub. All of our work will be done in RStudio and uploaded to the
+class GitHub repository. It is important that everyone is set-up
+correctly before we are done today. In the spirit of the R universe, our
+class is a community. If you see someone struggling, please give them
+some help.</p>
+</div>
+<div id="setup-your-computer" class="section level2">
+<h2>Setup your computer</h2>
+<p>Because you will need to work on assignments at home, it is important
+that you spend time making sure that your computer is set-up and ready
+to go. The first step in this is basic maintenance; i.e. clean up your
+desktop and update your OS. Data scientists are neat and tidy! Spend
+time getting yourself organized, it will pay off.</p>
+<p>Please follow these four steps to set-up you computer <a href="https://jmledford3115.github.io/datascibiol/setup.html">here</a>.</p>
+</div>
+<div id="github" class="section level2">
+<h2>GitHub</h2>
+<p><a href="http://www.github.com">GitHub</a> is a file storage and
+management site used by programmers. Programmers upload code to
+repositories (folders) and make it publicly available. We will use
+Github to store our work in BIS 15L.</p>
+</div>
+<div id="your-github-account" class="section level2">
+<h2>Your GitHub account</h2>
+<p>Since we will use GitHub for assignments, you need to have an account
+and make a repository for BIS 15L. If you followed the <a href="https://jmledford3115.github.io/datascibiol/setup.html">setup
+instructions</a> above then you should be all set. Please <a href="mailto:bymoore@ucdavis.edu">Email</a> your user name to Bry.</p>
+<p>We have a main repository for our class <a href="https://github.com/jmledford3115/datascibiol">datascibiol</a>. You
+should <strong>Star</strong> this repository for future reference.</p>
+</div>
+<div id="make-your-own-repository" class="section level2">
+<h2>Make Your Own Repository</h2>
+<ol style="list-style-type: decimal">
+<li>Go to <a href="www.github.com">github.com</a> and login.<br />
+</li>
+<li>Create a new repository.<br />
+</li>
+<li>Under repository name, use the title
+<code>BIS15W2024_your first initial and lastname</code>. Mine looks like
+this: BIS15W2024_jledford<br />
+</li>
+<li>Default settings are fine, but do click “Initialize this repository
+with a README”.<br />
+</li>
+<li>Once the repository is made, click on settings in the top
+right.<br />
+</li>
+<li>On the left toolbar click “Collaborators”.<br />
+</li>
+<li>Add “jmledford3115” and “bryshalm” as collaborators.</li>
+</ol>
+</div>
+<div id="github-desktop" class="section level2">
+<h2>GitHub Desktop</h2>
+<p>The easiest way to manage your GitHub repository is to use <a href="https://desktop.github.com/">GitHub desktop</a>. This is a helpful
+tool that will allow you to manage all of your files. Open the program
+and login using your GitHub account.</p>
+</div>
+<div id="clone-your-repository" class="section level2">
+<h2>Clone Your Repository</h2>
+<p>In GitHub desktop, you will see your personal repository as an option
+under <code>clone repository</code>. Clone your repository to the
+desktop. Once you have done this any changes you make to files will be
+recorded and easily uploaded. Do not move this folder from your
+desktop.</p>
+</div>
+<div id="copy-the-class-repository" class="section level2">
+<h2>Copy the Class Repository</h2>
+<p>In order to keep track of the class files, the last thing you need to
+do is make a copy of the class repository. I will make regular changes
+to the class repository including the addition of files and data that
+you will need. Do a search for <code>datascibiol</code> and download a
+copy to the desktop. You do this by navigating to the repository then
+going to the small green code button at top right. Click on the code
+button then go to Download ZIP.</p>
+<p>Copy the <code>lab1</code> folder from the class repository and paste
+it into your personal repository. By doing this, you have created your
+own copies of lab materials for lab 1.</p>
+</div>
+<div id="using-github" class="section level2">
+<h2>Using GitHub</h2>
+<p>You will use your repository to store all of your notes and work.
+There are three terms that we need to define:<br />
+1. <code>Commit</code> takes a snapshot of your current progress.<br />
+2. <code>Pull</code> this is the same as download.<br />
+3. <code>Push</code> this is the same as upload.</p>
+<p>If you setup <a href="https://desktop.github.com/">GitHub
+desktop</a>, then you will see that it automatically tracks your
+changes. Clicking the <code>Commit to master</code> button in the bottom
+left corner means that you are recording a snapshot of your edits
+locally. Once this is done, you need to upload your changes to GitHub.
+This is done by clicking <code>Push origin</code>. Once you have pushed
+your changes you can double check by looking at your repository on
+github.com.</p>
 </div>
 <div id="practice" class="section level2">
 <h2>Practice</h2>
-<p>Work through these examples and make adjustments to the values to
-experiment.</p>
-<ol style="list-style-type: decimal">
-<li>Evaluate all numerics in <code>my_vector_sequence</code> to
-determine which has a value of 15.</li>
-</ol>
-<pre class="r"><code>my_vector_sequence[15]</code></pre>
-<pre><code>## [1] 15</code></pre>
-<ol start="2" style="list-style-type: decimal">
-<li>We can use operators such as &lt;, &gt;, ==, &lt;==, etc. Show all
-values in <code>my_vector_sequence</code> that are less than 10. How
-about less than or equal to 10?</li>
-</ol>
-<pre class="r"><code>my_vector_sequence[my_vector_sequence &lt; 10]</code></pre>
-<pre><code>## [1] 1 2 3 4 5 6 7 8 9</code></pre>
-<pre class="r"><code>my_vector_sequence[my_vector_sequence &lt;= 10]</code></pre>
-<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
-<pre class="r"><code>my_vector_sequence[my_vector_sequence == 10]</code></pre>
-<pre><code>## [1] 10</code></pre>
-<ol start="3" style="list-style-type: decimal">
-<li>If you use <code>[]</code> then you only get the values, not the
-logical evaluation of the entire vector. Experiment with this by
-adjusting the chunk below.</li>
-</ol>
+<p>Since you will use your GitHub repository extensively in class, we
+need to practice.<br />
+1. Navigate to your repository and find the file <code>dummy_push</code>
+in the <code>lab 1</code> folder.<br />
+2. Open <code>dummy_push</code>.<br />
+3. Add your name under <code>author</code> at the top of the page.<br />
+4. Save this file.<br />
+5. <code>Knit</code> the file.<br />
+6. Use GitHub Desktop to first <code>Commit to master</code> and then
+<code>Push origin</code> to your GitHub repository.</p>
 </div>
-<div id="data-matrices" class="section level2">
-<h2>Data Matrices</h2>
-<p>Data matrices are a series of stacked vectors, similar to a data
-table. In the example below, we build a new data matrix using the matrix
-command.</p>
-<p>Box office earnings for Harry Potter movies (in millions!). Notice
-that these are separate vectors.</p>
-<pre class="r"><code>Philosophers_Stone &lt;- c(317.5, 657.1)
-Chamber_of_Secrets &lt;- c(261.9, 616.9)
-Prisoner_of_Azkaban &lt;- c(249.5, 547.1)
-Goblet_of_Fire &lt;- c(290.0, 606.8)
-Order_of_the_Phoenix &lt;- c(292.0, 647.8)
-Half_Blood_Prince &lt;- c(301.9, 632.4)
-Deathly_Hallows_1 &lt;- c(295.9, 664.3)
-Deathly_Hallows_2 &lt;- c(381.0, 960.5)</code></pre>
-<p>Create a new object called <code>box_office</code>. Here we are using
-the <code>c</code> command to combine the vectors into one.</p>
-<pre class="r"><code>box_office &lt;- c(Philosophers_Stone, Chamber_of_Secrets, Prisoner_of_Azkaban, Goblet_of_Fire, Order_of_the_Phoenix, Half_Blood_Prince, Deathly_Hallows_1, Deathly_Hallows_2)
-box_office</code></pre>
-<pre><code>##  [1] 317.5 657.1 261.9 616.9 249.5 547.1 290.0 606.8 292.0 647.8 301.9 632.4
-## [13] 295.9 664.3 381.0 960.5</code></pre>
-<p>Create <code>harry_potter_matrix</code> using the
-<code>matrix()</code> command. We need to tell R how to organize the
-<code>box_office</code> vector using the <code>nrow</code> and
-<code>byrow</code> commands.</p>
-<pre class="r"><code>harry_potter_matrix &lt;- matrix(box_office, nrow = 8, byrow = T) #Bry&#39;s Notes: nrow = number of rows, byrow = fill by row, T = true
-
-harry_potter_matrix</code></pre>
-<pre><code>##       [,1]  [,2]
-## [1,] 317.5 657.1
-## [2,] 261.9 616.9
-## [3,] 249.5 547.1
-## [4,] 290.0 606.8
-## [5,] 292.0 647.8
-## [6,] 301.9 632.4
-## [7,] 295.9 664.3
-## [8,] 381.0 960.5</code></pre>
-</div>
-<div id="name-the-rows-and-columns" class="section level2">
-<h2>Name the rows and columns</h2>
-<p>Vectors <code>region</code> and <code>titles</code>, used for
-naming.</p>
-<pre class="r"><code>region &lt;- c(&quot;US&quot;, &quot;non-US&quot;)
-region</code></pre>
-<pre><code>## [1] &quot;US&quot;     &quot;non-US&quot;</code></pre>
-<pre class="r"><code>titles &lt;- c(&quot;Philosophers_Stone&quot;, &quot;Chamber_of_Secrets&quot;, &quot;Prisoner_of_Azkaban&quot;, &quot;Goblet_of_Fire&quot;, &quot;Order_of_the_Phoenix&quot;, &quot;Half_Blood_Prince&quot;, &quot;Deathly_Hallows_1&quot;, &quot;Deathly_Hallows_2&quot;)
-titles</code></pre>
-<pre><code>## [1] &quot;Philosophers_Stone&quot;   &quot;Chamber_of_Secrets&quot;   &quot;Prisoner_of_Azkaban&quot; 
-## [4] &quot;Goblet_of_Fire&quot;       &quot;Order_of_the_Phoenix&quot; &quot;Half_Blood_Prince&quot;   
-## [7] &quot;Deathly_Hallows_1&quot;    &quot;Deathly_Hallows_2&quot;</code></pre>
-<p>Name the columns using <code>colnames()</code> with the vector
-region.</p>
-<pre class="r"><code>colnames(harry_potter_matrix) &lt;- region #Bry&#39;s Notes: colnames() is a function that allows you to name columns</code></pre>
-<p>Name the rows using <code>rownames()</code> with the vector
-titles.</p>
-<pre class="r"><code>rownames(harry_potter_matrix) &lt;- titles</code></pre>
-<p>Print <code>harry_potter_matrix</code>.</p>
-<pre class="r"><code>harry_potter_matrix</code></pre>
-<pre><code>##                         US non-US
-## Philosophers_Stone   317.5  657.1
-## Chamber_of_Secrets   261.9  616.9
-## Prisoner_of_Azkaban  249.5  547.1
-## Goblet_of_Fire       290.0  606.8
-## Order_of_the_Phoenix 292.0  647.8
-## Half_Blood_Prince    301.9  632.4
-## Deathly_Hallows_1    295.9  664.3
-## Deathly_Hallows_2    381.0  960.5</code></pre>
-</div>
-<div id="using-a-data-matrix" class="section level2">
-<h2>Using a data matrix</h2>
-<p>Once you have a data matrix, you can perform lots of different
-analyses. For example, you can calculate the total earnings of each
-movie.</p>
-<pre class="r"><code>global &lt;- rowSums(harry_potter_matrix)
-global</code></pre>
-<pre><code>##   Philosophers_Stone   Chamber_of_Secrets  Prisoner_of_Azkaban 
-##                974.6                878.8                796.6 
-##       Goblet_of_Fire Order_of_the_Phoenix    Half_Blood_Prince 
-##                896.8                939.8                934.3 
-##    Deathly_Hallows_1    Deathly_Hallows_2 
-##                960.2               1341.5</code></pre>
-<p>And even add a new column to reflect this calculation.
-<code>cbind()</code> adds columns.</p>
-<pre class="r"><code>all_harry_potter_matrix &lt;- cbind(harry_potter_matrix, global) #Bry&#39;s Notes: cbind() is a function that allows you to add columns. 
-all_harry_potter_matrix</code></pre>
-<pre><code>##                         US non-US global
-## Philosophers_Stone   317.5  657.1  974.6
-## Chamber_of_Secrets   261.9  616.9  878.8
-## Prisoner_of_Azkaban  249.5  547.1  796.6
-## Goblet_of_Fire       290.0  606.8  896.8
-## Order_of_the_Phoenix 292.0  647.8  939.8
-## Half_Blood_Prince    301.9  632.4  934.3
-## Deathly_Hallows_1    295.9  664.3  960.2
-## Deathly_Hallows_2    381.0  960.5 1341.5</code></pre>
-</div>
-<div id="practice-1" class="section level2">
-<h2>Practice</h2>
-<ol style="list-style-type: decimal">
-<li>What are the total earnings for the US and non-US regions?</li>
-</ol>
-<pre class="r"><code>total_earn &lt;- colSums(harry_potter_matrix)
-total_earn</code></pre>
-<pre><code>##     US non-US 
-## 2389.7 5332.9</code></pre>
-<ol start="2" style="list-style-type: decimal">
-<li>Add this information to the data matrix. Hint: you are adding a row,
-not a column.</li>
-</ol>
-<pre class="r"><code>all_harry_potter_matrix &lt;- rbind(all_harry_potter_matrix, total_earn)</code></pre>
-<pre><code>## Warning in rbind(all_harry_potter_matrix, total_earn): number of columns of
-## result is not a multiple of vector length (arg 2)</code></pre>
-<pre class="r"><code>all_harry_potter_matrix</code></pre>
-<pre><code>##                          US non-US global
-## Philosophers_Stone    317.5  657.1  974.6
-## Chamber_of_Secrets    261.9  616.9  878.8
-## Prisoner_of_Azkaban   249.5  547.1  796.6
-## Goblet_of_Fire        290.0  606.8  896.8
-## Order_of_the_Phoenix  292.0  647.8  939.8
-## Half_Blood_Prince     301.9  632.4  934.3
-## Deathly_Hallows_1     295.9  664.3  960.2
-## Deathly_Hallows_2     381.0  960.5 1341.5
-## total_earn           2389.7 5332.9 2389.7</code></pre>
-</div>
-<div id="a-few-extras" class="section level2">
-<h2>A few Extras</h2>
-<p>The same methods of selecting elements in a vector apply to data
-matrices. We use <code>[]</code>. The following selects the value in the
-first column, second row.</p>
-<pre class="r"><code>harry_potter_matrix[2,1]</code></pre>
-<pre><code>## [1] 261.9</code></pre>
-<p>Adding a colon <code>:</code> selects the specified elements in a
-column.</p>
-<pre class="r"><code>harry_potter_matrix[1:4] #Bry&#39;s Notes: This selects the first four elements in the first column</code></pre>
-<pre><code>## [1] 317.5 261.9 249.5 290.0</code></pre>
-<p>We can also select values in an entire row or column. This can be
-useful for calculations. Here we calculate the mean of the entire second
-column.</p>
-<pre class="r"><code>non_us_earnings &lt;- all_harry_potter_matrix[ ,2]
-mean(non_us_earnings)</code></pre>
-<pre><code>## [1] 1185.089</code></pre>
-</div>
-<div id="wrap-up" class="section level2">
-<h2>Wrap-up</h2>
-<p>Please review the learning goals and be sure to use the code here as
-a reference when completing the homework.<br />
-–&gt;<a href="https://jmledford3115.github.io/datascibiol/">Home</a></p>
+<div id="thats-it-lets-take-a-break-and-then-move-on-to-part-2" class="section level2">
+<h2>That’s it! Let’s take a break and then move on to part 2!</h2>
+<p>–&gt;<a href="https://jmledford3115.github.io/datascibiol/">Home</a></p>
 </div>
 
 

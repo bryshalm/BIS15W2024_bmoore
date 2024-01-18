@@ -1,15 +1,12 @@
 ---
 title: "Lab 1, Part 2"
-date: "`r Sys.Date()`"
+date: "2024-01-17"
 output: 
   ioslides_presentation: 
     keep_md: true
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-library("jpeg")
-```
+
 
 ## Setup
 1. Login to the lab computer (please don't use your personal computer).  

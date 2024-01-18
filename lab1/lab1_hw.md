@@ -1,11 +1,11 @@
 ---
 title: "Lab 1 Homework"
 author: "Bryshal Moore"
-date: "2024-01-12"
+date: "2024-01-17"
 output:
   html_document: 
     theme: spacelab
-    keep_md: yes
+    keep_md: true
 ---
 
 ## Instructions
