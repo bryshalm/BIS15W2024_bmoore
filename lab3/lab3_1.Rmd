@@ -40,7 +40,6 @@ hbirds
 ```
 
 OK, stop and think- how does this differ from making a data matrix? Are the data treated differently?  
-**Bry's Edit:** A matrix and a data frame are both two-dimensional data structures. However, a matrix can only hold one type of data (e.g. numeric, character, logical) while a data frame can hold multiple types of data.
 ```{r}
 hummingbirds <- c(Sex, Length, Weight)
 hummingbirds_matrix <- matrix(hummingbirds, ncol=3, byrow = F)
@@ -51,44 +50,11 @@ Notice that not only are the data neat and clean looking, there is also informat
 
 What are the column names of our data frame? Notice that R defaulted to using the names of our vectors, but we could name them something else when creating the data frame, or rename them later.
 ```{r}
-#Bry's Edit: To add column names to the hbirds data frame, we can use the colnames() function.
 
-colnames(hbirds) <- c("Sex", "Length (in)", "Weight (oz)")
-
-hbirds
-```
-
-```{r}
-
-```
-
-```{r}
-
-
-```
-
-```{r}
 ```
 
 What are the dimensions of the `hbirds` data frame? The `dim()` and `str()` commands provide this information.   
 ```{r}
-#Bry's Edit: The dim() function returns the dimensions of the data frame. The str() function returns the structure of the data frame.
-
-dim(hbirds)
-
-str(hbirds)
-```
-
-```{r}
-
-```
-
-```{r}
-
-```
-
-```{r}
-
 
 ```
 
@@ -98,7 +64,6 @@ str(hbirds)
 
 Let's use lowercase names when we create the data frame. We just changed to lowercase here, but we could use any names we wish.  
 ```{r}
-
 
 ```
 
