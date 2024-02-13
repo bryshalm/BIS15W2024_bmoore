@@ -1,0 +1,236 @@
+---
+title: "Untitled"
+author: "Bryshal Moore"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+```{r}
+
+```
+ 1. the difference between a dataframe, a matrix, and a vector?
+ Answer: A dataframe is a table-like data structure that can store different types of data. A matrix is a two-dimensional array that can store only one type of data. A vector is a one-dimensional array that can store only one type of data.
+ 
+2. What is dplyr and what are the main functions used for data manipulation?
+Answer: dplyr is a package that provides a set of functions for data manipulation. The main functions used for data manipulation are filter(), select(), mutate(), summarise(), and arrange().
+
+3. What do variables mean in R and what are the main types of variables?
+Answer: In R, a variable is a name that is used to store a value. The main types of variables are numeric, character, logical, and factor.
+
+3. What does select() do?
+Answer: The select() function is used to select columns from a dataframe.
+
+4. What does filter() do?
+Answer: The filter() function is used to filter rows from a dataframe based on a condition. Rows that meet the condition are kept, while rows that do not meet the condition are removed.
+ 
+5. What is the difference between the functions select() and filter()?
+Answer: The select() function is used to select columns from a dataframe, while the filter() function is used to filter rows from a dataframe based on a condition. The select() function does not remove any rows, while the filter() function removes rows that do not meet the condition. Filter() can be used to select rows based on a condition, but it is not the primary function of the filter() function. The primary function of the filter() function is to filter rows based on a condition.
+
+An example of the select() function is shown below:
+
+```{r}
+# Create a dataframe
+df <- data.frame(
+  group = c("A", "A", "B", "B", "C", "C"),
+  value = c(1, 2, 3, 4, 5, 6)
+)
+
+# Use the select() function to select the "group" column
+select(df, group)
+
+
+```
+```{r} 
+# Use the filter() function to filter rows where the "group" column is equal to "A"
+filter(df, group == "A")
+
+
+```
+6. What does mutate() do?
+Answer: The mutate() function is used to add new columns to a dataframe or modify existing columns. It takes a dataframe as its first argument, and then a series of expressions that define the new columns.
+
+7. What does summarise() do?
+Answer: The summarise() function is used to summarise the data in a dataframe. It takes a dataframe as its first argument, and then a series of expressions that define the summary statistics to be calculated. Summarize() and summarise() are the same function, but they are spelled differently in different versions of dplyr.
+
+An example of the summarise() function is shown below:
+
+```{r}
+library(dplyr)
+
+# Create a dataframe
+df <- data.frame(
+  group = c("A", "A", "B", "B", "C", "C"),
+  value = c(1, 2, 3, 4, 5, 6)
+)
+
+df
+```
+
+```{r}
+summarise(df, mean = mean(value), sd = sd(value))
+```
+
+8. What does arrange() do?
+Answer: The arrange() function is used to reorder the rows of a dataframe based on the values of one or more columns. It takes a dataframe as its first argument, and then a series of expressions that define the order in which the rows should be arranged. The default order is ascending, but you can specify descending order by using the desc() function.
+
+9. What are some other ways to view your data in R?
+Answer: Some other ways to view your data in R are using the head() and tail() functions to view the first and last few rows of a dataframe, using the str() function to view the structure of a dataframe, and using the summary() function to view summary statistics for a dataframe.Glimpse() is another function that can be used to view the structure of a dataframe, and the View() function can be used to open a new window with the dataframe displayed as a table.
+
+10. What is the pipe operator and what does it do?
+Answer: The pipe operator (%>%) is used to chain together multiple dplyr functions. It takes the output of one function and passes it as the first argument to the next function. This allows you to write code that is easier to read and understand, because you can see the sequence of operations that are being performed on the data. The pipe operator is especially useful when working with large datasets, because it allows you to perform multiple operations on the data without having to create intermediate variables.
+
+11. What is the difference between the pipe operator and the traditional way of writing R code?
+Answer: The traditional way of writing R code involves using nested function calls, which can be difficult to read and understand, especially when working with large datasets. The pipe operator allows you to write code that is easier to read and understand, because you can see the sequence of operations that are being performed on the data. The pipe operator is especially useful when working with large datasets, because it allows you to perform multiple operations on the data without having to create intermediate variables.
+
+12. What is the ifelse() function and what does it do?
+Answer: The ifelse() function is used to create a new variable based on a condition. It takes three arguments: a condition, a value to use if the condition is true, and a value to use if the condition is false. The ifelse() function is useful for creating new variables based on existing variables, and for recoding variables into different categories.
+
+13. What is the group_by() function and what does it do?
+Answer: The group_by() function is used to group the rows of a dataframe based on the values of one or more columns. It takes a dataframe as its first argument, and then a series of expressions that define the columns to group by. The group_by() function is useful for performing operations on groups of data, such as calculating summary statistics for each group, or creating new variables based on the values of each group.
+
+An example of the group_by() function is shown below:
+
+```{r}
+# Create a dataframe
+df <- data.frame(
+  group = c("A", "A", "B", "B", "C", "C"),
+  value = c(1, 2, 3, 4, 5, 6)
+)
+
+df
+```
+
+```{r}
+
+# Group the dataframe by the "group" column
+df_grouped <- df %>%
+  group_by(group) %>%
+  mutate(mean_value = mean(value))
+
+df_grouped
+```
+
+
+14. What is the difference between the functions group_by() and summarise()?
+Answer: The group_by() function is used to group the rows of a dataframe based on the values of one or more columns, while the summarise() function is used to summarise the data in a dataframe. The group_by() function is used to perform operations on groups of data, such as calculating summary statistics for each group, or creating new variables based on the values of each group. The summarise() function is used to calculate summary statistics for the entire dataframe, or for each group of data if the dataframe has been grouped using the group_by() function.
+
+
+15. What is the count() function and what does it do?
+Answer: The count() function is used to count the number of rows in a dataframe, or the number of rows in each group of a grouped dataframe. It takes a dataframe as its first argument, and then a series of expressions that define the columns to count by. The count() function is useful for calculating the frequency of different categories in a dataframe, or for calculating the number of rows in each group of a grouped dataframe.
+
+16. What is the tabyl() function and what does it do?
+Answer: The tabyl() function is used to create a contingency table from a dataframe. It takes a dataframe as its first argument, and then a series of expressions that define the columns to tabulate. The tabyl() function is useful for calculating the frequency of different categories in a dataframe, and for creating tables that summarize the relationship between two or more variables.
+
+17. What is the difference between the functions count() and tabyl()?
+Answer: The count() function is used to count the number of rows in a dataframe, or the number of rows in each group of a grouped dataframe, while the tabyl() function is used to create a contingency table from a dataframe. The count() function is useful for calculating the frequency of different categories in a dataframe, or for calculating the number of rows in each group of a grouped dataframe. The tabyl() function is useful for creating tables that summarize the relationship between two or more variables, and for calculating the frequency of different categories in a dataframe.
+
+18. What are classes and methods in R?
+Answer: In R, a class is a data type that defines the structure and behavior of an object. A method is a function that is associated with a particular class, and that defines how objects of that class should behave. Classes and methods are used to create new data types and to define the behavior of those data types.
+
+19. Why is it important to know the classes of your variables in R?
+Answer: It is important to know the classes of your variables in R because different classes of variables have different properties and behaviors. For example, numeric variables can be used in mathematical calculations, while character variables cannot. Knowing the classes of your variables allows you to use the appropriate functions and methods for working with those variables, and to avoid errors that can occur when using the wrong functions and methods.
+
+20. What is [] used for in R?
+Answer: The [] operator is used to subset a vector, matrix, or dataframe. It takes one or more indices as its argument, and returns the elements of the vector, matrix, or dataframe that correspond to those indices. The [] operator can be used to select specific elements of a vector, specific rows and columns of a matrix, or specific rows and columns of a dataframe. The first component of the [] operator is used to select rows, and the second component is used to select columns.
+
+21. What is the difference between [] and [[]] in R?
+Answer: The [] operator is used to subset a vector, matrix, or dataframe, while the [[]] operator is used to extract a single element from a list. The [] operator can be used to select specific elements of a vector, specific rows and columns of a matrix, or specific rows and columns of a dataframe. The [[]] operator is used to extract a single element from a list, and returns that element as a vector, matrix, or dataframe, depending on the type of the element.
+
+22. What is the difference between [] and $ in R?
+Answer: The [] operator is used to subset a vector, matrix, or dataframe, while the $ operator is used to extract a single column from a dataframe. The [] operator can be used to select specific elements of a vector, specific rows and columns of a matrix, or specific rows and columns of a dataframe. The $ operator is used to extract a single column from a dataframe, and returns that column as a vector.
+
+23. What is cbind and rbind used for in R?
+Answer: The cbind() function is used to combine two or more vectors, matrices, or dataframes by adding columns, while the rbind() function is used to combine two or more vectors, matrices, or dataframes by adding rows. The cbind() function takes two or more arguments, and returns a dataframe with the columns of the input objects combined. The rbind() function takes two or more arguments, and returns a dataframe with the rows of the input objects combined.
+
+23. How to change the class of a variable in R?
+Answer: The class of a variable in R can be changed using the as() function. The as() function takes two arguments: the variable to be converted, and the class to convert it to. For example, to convert a numeric variable to a character variable, you can use the following code:
+
+```{r}
+# Create a numeric variable
+x <- 123
+
+# To check the class of the variable
+class(x)
+```
+
+```{r}
+
+# Convert the numeric variable to a character variable
+x <- as.character(x)
+
+# To check the class of the variable
+class(x)
+```
+24. How to check for NAs in a dataframe?
+Answer: The is.na() function can be used to check for NAs in a dataframe. The is.na() function takes a dataframe as its argument, and returns a dataframe of the same dimensions, with TRUE in the cells that contain NAs, and FALSE in the cells that do not contain NAs. The colSums() function can be used to count the number of NAs in each column of a dataframe, and the rowSums() function can be used to count the number of NAs in each row of a dataframe. The complete.cases() function can be used to remove rows that contain NAs from a dataframe.
+
+25. How to remove NAs from a dataframe?
+Answer: The complete.cases() function can be used to remove rows that contain NAs from a dataframe. The complete.cases() function takes a dataframe as its argument, and returns a logical vector that indicates which rows do not contain NAs. The function na.rm = True can be used to remove NAs from a vector, and the function na.omit() can be used to remove NAs from a dataframe. The function na.exclude() can be used to remove NAs from a dataframe, and to keep track of the rows that were removed.
+
+26. What is the difference between na.rm = TRUE and na.omit()?
+Answer: The na.rm = TRUE argument is used to remove NAs from a vector, while the na.omit() function is used to remove NAs from a dataframe. The na.rm = TRUE argument can be used with functions such as mean(), sum(), and sd() to remove NAs from a vector before calculating summary statistics. The na.omit() function can be used to remove NAs from a dataframe, and returns a dataframe with the NAs removed.
+
+27. What is the different between =  and <- in R?
+Answer: The = operator is used to assign a value to a variable, while the <- operator is used to assign a value to a variable, and to return the value of the variable. The = operator is used in function calls and in the definition of function arguments, while the <- operator is used in the definition of variables and in the definition of functions. The = operator is used in the definition of variables and in the definition of functions, while the <- operator is used in function calls and in the definition of function arguments.
+
+28. What is the difference between = and == in R?
+Answer: The = operator is used to assign a value to a variable, while the == operator is used to test for equality. The = operator is used in the definition of variables and in the definition of functions, while the == operator is used to test whether two values are equal. The = operator is used in the definition of variables and in the definition of functions, while the == operator is used to test whether two values are equal.
+
+29. What is the difference between read.csv and read_csv in R?
+Answer: The read.csv() function is used to read a CSV file into a dataframe, while the read_csv() function is used to read a CSV file into a tibble. The read.csv() function is part of the base R package, while the read_csv() function is part of the readr package. The read.csv() function is used to read a CSV file into a dataframe, while the read_csv() function is used to read a CSV file into a tibble. A tibble is a modern version of a dataframe that has some additional features, such as better printing and subsetting, and better handling of missing values.
+
+30. What is the readr package used for in R?
+Answer: The readr package is used to read and write rectangular data in a tabular format. It provides a set of functions for reading and writing data in a variety of formats, including CSV, TSV, and fixed-width files. The readr package is part of the tidyverse, and is designed to work well with other tidyverse packages, such as dplyr and ggplot2. The readr package is used to read and write rectangular data in a tabular format, and to provide a consistent interface for working with data in R.
+
+31. What is the str() function used for in R?
+Answer: The str() function is used to display the structure of an R object. It takes an R object as its argument, and returns a compact and informative representation of the structure of that object. The str() function is useful for understanding the structure of complex objects, such as dataframes and lists, and for identifying the classes and types of the components of those objects.
+
+32. What is the table() function used for in R?
+Answer: The table() function is used to create a contingency table from one or more factors. It takes one or more factors as its arguments, and returns a table that summarizes the frequency of different categories in the factors. The table() function is useful for calculating the frequency of different categories in a dataframe, and for creating tables that summarize the relationship between two or more variables.
+
+33. What is the difference between the functions table() and tabyl()?
+Answer: The table() function is used to create a contingency table from one or more factors, while the tabyl() function is used to create a contingency table from a dataframe. The table() function is useful for calculating the frequency of different categories in a dataframe, and for creating tables that summarize the relationship between two or more variables. The tabyl() function is useful for creating tables that summarize the relationship between two or more variables, and for calculating the frequency of different categories in a dataframe.
+
+An example of the table() function is shown below:
+```{r}
+# Create a dataframe
+df <- data.frame(
+  group = c("A", "A", "B", "B", "C", "C"),
+  value = c(1, 2, 3, 4, 5, 6)
+)
+
+# Us
+
+```
+
+34. What is the names() function used for in R?
+Answer: The names() function is used to get or set the names of the columns of a dataframe. It takes a dataframe as its argument, and returns a character vector that contains the names of the columns of the dataframe. The names() function is useful for getting the names of the columns of a dataframe, and for setting the names of the columns of a dataframe.
+
+35. What is the difference between mutate and mutate_all in R?
+Answer: The mutate() function is used to add new columns to a dataframe or modify existing columns, while the mutate_all() function is used to apply a function to all columns of a dataframe. The mutate() function takes a dataframe as its first argument, and then a series of expressions that define the new columns. The mutate_all() function takes a dataframe as its first argument, and then a function that defines the operation to be applied to all columns of the dataframe.
+
+36. What is the difference between select and select_if in R?
+Answer: The select() function is used to select columns from a dataframe, while the select_if() function is used to select columns from a dataframe based on a condition. The select() function takes a dataframe as its first argument, and then a series of expressions that define the columns to select. The select_if() function takes a dataframe as its first argument, and then a function that defines the condition to be applied to the columns of the dataframe.
+
+37. What is the mutate_at() function used for in R?
+Answer: The mutate_at() function is used to apply a function to a subset of columns of a dataframe. It takes a dataframe as its first argument, and then a series of expressions that define the columns to modify, and the function to apply to those columns. The mutate_at() function is useful for applying the same operation to multiple columns of a dataframe, and for creating new variables based on the values of multiple columns.
+
+38. What does (.) mean in R?
+Answer: The (.) operator is used to refer to the current column in a dplyr function. It is used to refer to the column that is being modified or operated on by the function. The (.) operator is useful for creating new variables based on the values of existing variables, and for applying the same operation to multiple columns of a dataframe.
+
+What does the ~ operator mean in R?
+Answer: The ~ operator is used to define a formula in R. It is used to specify the relationship between the variables in a model, and to define the response and predictor variables in a regression model. The ~ operator is useful for specifying the structure of a model, and for fitting models to data using functions such as lm() and glm().
+
+What is the difference between - and ! in R?
+Answer: The - operator is used to remove columns from a dataframe, while the ! operator is used to negate a logical condition. The - operator is useful for removing columns from a dataframe, and for selecting all columns except for a specific column. The ! operator is useful for negating a logical condition, and for selecting rows that do not meet a specific condition.
+
+What does the ~ operator mean in R?
+Answer: The ~ operator is used to define a formula in R. It is used to specify the relationship between the variables in a model, and to define the response and predictor variables in a regression model. The ~ operator is useful for specifying the structure of a model, and for fitting models to data using functions such as lm() and glm().
